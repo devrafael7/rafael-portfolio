@@ -145,7 +145,7 @@ const Skills = () => {
       <div className="relative z-10 w-full px-5 md:px-10">
         <TitleHeader
           title="Skills & Expertise"
-          sub="⚡ Technologies and professional capabilities"
+          sub="📊 Technologies and professional capabilities"
         />
 
         <div className="mx-auto mt-16 grid max-w-[1850px] grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">

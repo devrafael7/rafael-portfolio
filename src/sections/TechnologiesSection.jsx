@@ -7,6 +7,7 @@ import TitleHeader from "../components/TitleHeader";
 // ============================================================
 // ÍCONES - @dev.icons/react
 // ============================================================
+
 import {
   SnowflakeIcon,
   Python,
@@ -21,6 +22,7 @@ import {
 // ============================================================
 // ÍCONES - react-icons
 // ============================================================
+
 import { VscGraph } from "react-icons/vsc";
 import { FaDatabase } from "react-icons/fa6";
 import { SiApachekafka } from "react-icons/si";
@@ -29,10 +31,6 @@ import { SiGithub } from "react-icons/si";
 import { SiGit } from "react-icons/si";
 
 gsap.registerPlugin(ScrollTrigger);
-
-// ============================================================
-// BASE URL
-// ============================================================
 
 const BASE_URL = import.meta.env.BASE_URL;
 
@@ -44,102 +42,103 @@ const techStack = [
   {
     name: "Python",
     category: "Language & Data",
+    stars: 3,
     icon: Python,
   },
-
   {
     name: "Apache Spark",
     category: "Big Data Processing",
+    stars: 1,
     icon: ApacheSpark,
-    color: "text-white",
   },
-
   {
     name: "SQL",
     category: "Database & Querying",
+    stars: 4,
     icon: FaDatabase,
     color: "text-sky-300",
   },
-
   {
     name: "AWS EC2",
     category: "Cloud Infrastructure",
+    stars: 2,
     icon: AwsEc2,
   },
-
   {
     name: "AWS S3",
     category: "Cloud Storage",
+    stars: 2,
     icon: AwsS3,
   },
-
   {
     name: "Docker",
     category: "Containerization",
+    stars: 2,
     icon: DockerIcon,
   },
-
   {
     name: "Airflow",
     category: "Orchestration",
+    stars: 1,
     icon: Airflow,
   },
-
   {
     name: "Databricks",
-    category: "Data Cloud & Lakehouse",
+    category: "Data Platform",
+    stars: 2,
     icon: SiDatabricks,
     color: "text-red-500",
   },
-
   {
     name: "Snowflake",
-    category: "Data Cloud & DW",
+    category: "Data Warehouse",
+    stars: 3,
     icon: SnowflakeIcon,
   },
-
   {
     name: "dbt",
     category: "Data Transformation",
+    stars: 3,
     icon: DbtIcon,
   },
 
-  {
+  /*{
     name: "Apache Kafka",
     category: "Streaming",
+    stars: 3,
     icon: SiApachekafka,
-  },
-
+  },*/
   {
     name: "GitHub",
     category: "Version Control",
+    stars: 3,
     icon: SiGithub,
     color: "text-white",
   },
-
   {
     name: "Git",
     category: "Version Control",
+    stars: 3,
     icon: SiGit,
     color: "text-orange-500",
   },
-
   {
     name: "Power BI",
     category: "Business Intelligence",
+    stars: 5,
     icon: VscGraph,
     color: "text-yellow-400",
   },
-
   {
     name: "Power Automate",
     category: "Automation",
+    stars: 3,
     image: `${BASE_URL}images/automate.png`,
   },
-
   {
     name: "Power Apps",
     category: "Low-Code Development",
+    stars: 4,
     image: `${BASE_URL}images/powerapp-2020-icon-1024x1024-1.png`,
   },
 ];
@@ -150,350 +149,146 @@ const techStack = [
 
 const TechnologiesSection = () => {
   const sectionRef = useRef(null);
-  const itemsRef = useRef([]);
 
   useLayoutEffect(() => {
     const context = gsap.context(() => {
-      gsap.fromTo(
-        itemsRef.current,
-        {
-          opacity: 0,
-          scale: 0.5,
-        },
-        {
-          opacity: 1,
-          scale: 1,
-          duration: 0.7,
-          stagger: 0.04,
-          ease: "back.out(1.5)",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 75%",
-            once: true,
+      const items = gsap.utils.toArray(".technology-item");
+
+      items.forEach((item, index) => {
+        const direction = index % 2 === 0 ? -60 : 60;
+
+        gsap.fromTo(
+          item,
+          {
+            opacity: 0,
+            x: direction,
+            y: 35,
+            scale: 0.9,
           },
-        }
-      );
+          {
+            opacity: 1,
+            x: 0,
+            y: 0,
+            scale: 1,
+            duration: 0.8,
+            delay: (index % 4) * 0.08,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: item,
+              start: "top 88%",
+              once: true,
+            },
+          }
+        );
+      });
     }, sectionRef);
 
     return () => context.revert();
   }, []);
 
-  const totalItems = techStack.length;
-
   return (
-    <section
-      id="technologies"
-      ref={sectionRef}
-      className="section-padding relative overflow-hidden"
-    >
-      {/* ======================================================
-          LUZES DECORATIVAS
-      ====================================================== */}
+  <section
+    id="technologies"
+    ref={sectionRef}
+    className="section-padding relative overflow-hidden"
+  >
+    {/* Glow central */}
+    <div className="pointer-events-none absolute left-1/2 top-1/2 h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-500/5 blur-[120px]" />
 
-      <div className="pointer-events-none absolute -left-52 top-1/4 h-[450px] w-[450px] rounded-full bg-blue-500/10 blur-[150px]" />
-
-      <div className="pointer-events-none absolute -right-52 bottom-0 h-[450px] w-[450px] rounded-full bg-purple-500/10 blur-[150px]" />
-
-      {/* ======================================================
-          GRADE DECORATIVA
-      ====================================================== */}
-
-      <div
-        className="pointer-events-none absolute inset-0 opacity-[0.025]"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(255,255,255,0.7) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.7) 1px, transparent 1px)",
-          backgroundSize: "45px 45px",
-        }}
+    <div className="relative z-10 w-full px-5 md:px-10">
+      <TitleHeader
+        title="Technologies in Progress"
+        sub="🛠️ Tools I’m learning and applying in real projects"
       />
 
-      <div className="relative z-10 w-full px-5 md:px-10">
+      <div className="mx-auto mt-14 grid w-full max-w-6xl grid-cols-2 gap-x-5 gap-y-10 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 lg:gap-x-6 lg:gap-y-12">
+        {techStack.map((tech, index) => {
+          const Icon = tech.icon;
 
-        {/* ====================================================
-            TÍTULO
-        ==================================================== */}
-
-        <TitleHeader
-          title="Technologies"
-          sub="⚡ From Data to Insights"
-        />
-
-        {/* ====================================================
-            RODA DE TECNOLOGIAS
-        ==================================================== */}
-
-        <div
-          className="
-            relative mx-auto mt-24 mb-16
-            flex h-[620px] w-[620px]
-            items-center justify-center
-            sm:h-[720px] sm:w-[720px]
-            lg:h-[820px] lg:w-[820px]
-          "
-          style={{
-            "--radius": "clamp(300px, 35vw, 370px)",
-          }}
-        >
-
-          {/* ==================================================
-              ANEL PONTILHADO
-          ================================================== */}
-
-          <div
-            className="
-              pointer-events-none
-              absolute
-              rounded-full
-              border
-              border-dashed
-              border-white/10
-            "
-            style={{
-              width: "calc(var(--radius) * 2)",
-              height: "calc(var(--radius) * 2)",
-            }}
-          />
-
-          {/* ==================================================
-              NÚCLEO CENTRAL
-          ================================================== */}
-
-          <div
-            className="
-              pointer-events-none
-              absolute
-              z-20
-              flex
-              h-56 w-56
-              flex-col
-              items-center
-              justify-center
-              rounded-full
-              border
-              border-white/10
-              bg-white/[0.025]
-              px-8
-              text-center
-              backdrop-blur-md
-
-              sm:h-64 sm:w-64
-              sm:px-10
-
-              lg:h-72 lg:w-72
-              lg:px-12
-            "
-          >
-            {/* Conceito principal */}
-
-            <span
-              className="
-                mb-3
-                text-[11px]
-                font-bold
-                uppercase
-                tracking-[0.18em]
-                text-cyan-300
-                sm:text-xs
-              "
-            >
-              Concepts
-            </span>
-
-            {/* Linha divisória */}
-
-            <div className="mb-3 h-px w-16 bg-white/10" />
-
-            {/* Conceitos */}
-
+          return (
             <div
-              className="
-                flex
-                flex-col
-                items-center
-                gap-1.5
-                text-[9px]
-                font-medium
-                leading-tight
-                tracking-wide
-                text-white/50
-
-                sm:gap-2
-                sm:text-[10px]
-
-                lg:gap-2
-                lg:text-[11px]
-              "
+              key={tech.name}
+              className="technology-item group relative flex flex-col items-center text-center mt-10"
             >
-              <span>Medallion Architecture</span>
+              {/* Número */}
+              <span className="absolute -top-5 text-[8px] font-medium tracking-[0.25em] text-white/15 transition-all duration-500 group-hover:text-cyan-300/70">
+                {String(index + 1).padStart(2, "0")}
+              </span>
 
-              <span>Dimensional Modeling</span>
-
-              <span>ACID Transactions</span>
-
-              <span>ETL / ELT</span>
-
-              <span>Batch & Streaming</span>
-
-              <span>Warehouse & Lakehouse</span>
-
-              <span>Data Quality</span>
-            </div>
-          </div>
-
-          {/* ==================================================
-              TECNOLOGIAS
-          ================================================== */}
-
-          {techStack.map((tech, index) => {
-            const angle = (index / totalItems) * 360;
-
-            // Componente React
-            const Icon = tech.icon;
-
-            return (
+              {/* Ícone */}
               <div
-                key={tech.name}
-                className="absolute left-1/2 top-1/2"
-                style={{
-                  transform: `
-                    translate(-50%, -50%)
-                    rotate(${angle}deg)
-                    translateY(calc(-1 * var(--radius)))
-                    rotate(-${angle}deg)
-                  `,
-                }}
+                className={`
+                  relative
+                  flex
+                  h-12
+                  w-12
+                  items-center
+                  justify-center
+                  transition-all
+                  duration-500
+                  group-hover:-translate-y-1.5
+                  group-hover:scale-125
+                  sm:h-14
+                  sm:w-14
+                  lg:h-16
+                  lg:w-16
+                  ${tech.color || "text-white"}
+                `}
               >
-                <div
-                  ref={(element) => {
-                    itemsRef.current[index] = element;
-                  }}
-                  className="
-                    group
-                    flex
-                    flex-col
-                    items-center
-                    text-center
-                    opacity-0
-                    transition-transform
-                    duration-300
-                    hover:-translate-y-1.5
-                  "
-                >
+                {/* Glow */}
+                <div className="pointer-events-none absolute inset-0 rounded-full bg-blue-400/0 blur-xl transition-all duration-500 group-hover:bg-blue-400/20" />
 
-                  {/* ==================================================
-                      ÍCONE
-                  ================================================== */}
-
-                  <div
-                    className={`
-                      relative
-                      mb-2
-                      flex
-                      h-11 w-11
-                      items-center
-                      justify-center
-                      rounded-2xl
-                      bg-white/[0.03]
-                      p-2.5
-                      ring-1
-                      ring-white/10
-                      backdrop-blur-md
-                      transition-all
-                      duration-300
-                      group-hover:bg-white/[0.08]
-                      group-hover:ring-white/25
-                      group-hover:shadow-lg
-                      group-hover:shadow-white/5
-                      sm:h-14 sm:w-14
-                      sm:p-3
-                      lg:h-16 lg:w-16
-                      ${tech.color || "text-white"}
-                    `}
-                  >
-
-                    {/* ==================================================
-                        SE FOR IMAGEM LOCAL
-                    ================================================== */}
-
-                    {tech.image ? (
-                      <img
-                        src={tech.image}
-                        alt={`${tech.name} icon`}
-                        className="
-                          h-full
-                          w-full
-                          object-contain
-                          transition-transform
-                          duration-300
-                          group-hover:scale-120
-                        "
-                        loading="lazy"
-                      />
-                    ) : (
-                      /* ==================================================
-                         SE FOR COMPONENTE REACT
-                      ================================================== */
-
-                      <Icon
-                        className="
-                          h-full
-                          w-full
-                          transition-transform
-                          duration-300
-                          group-hover:scale-120
-                        "
-                      />
-                    )}
-
-                  </div>
-
-                  {/* ==================================================
-                      NOME
-                  ================================================== */}
-
-                  <h3
-                    className="
-                      whitespace-nowrap
-                      text-xs
-                      font-semibold
-                      tracking-wide
-                      text-white
-                      transition-colors
-                      duration-300
-                      group-hover:text-cyan-300
-                      sm:text-sm
-                    "
-                  >
-                    {tech.name}
-                  </h3>
-
-                  {/* ==================================================
-                      CATEGORIA
-                  ================================================== */}
-
-                  <span
-                    className="
-                      hidden
-                      whitespace-nowrap
-                      text-[10px]
-                      font-medium
-                      uppercase
-                      tracking-wider
-                      text-white/40
-                      sm:block
-                    "
-                  >
-                    {tech.category}
-                  </span>
-
-                </div>
+                {tech.image ? (
+                  <img
+                    src={tech.image}
+                    alt={`${tech.name} icon`}
+                    className="relative z-10 h-full w-full object-contain transition-transform duration-500 group-hover:scale-110"
+                    loading="lazy"
+                  />
+                ) : (
+                  <Icon className="relative z-10 h-full w-full transition-transform duration-500 group-hover:scale-110" />
+                )}
               </div>
-            );
-          })}
-        </div>
+
+              {/* Nome */}
+              <h3 className="mt-3 text-xs font-semibold tracking-wide text-white transition-all duration-500 group-hover:-translate-y-0.5 group-hover:text-cyan-300 sm:text-sm">
+                {tech.name}
+              </h3>
+
+              {/* Categoria */}
+              <p className="mt-1 text-[8px] uppercase tracking-[0.12em] text-white/30 transition-colors duration-500 group-hover:text-white/60 sm:text-[9px]">
+                {tech.category}
+              </p>
+
+              {/* Estrelas */}
+              <div className="mt-2 flex gap-0.5">
+                {[...Array(5)].map((_, starIndex) => (
+                  <span
+                    key={starIndex}
+                    className={`text-sm leading-none transition-all duration-300 sm:text-base ${
+                      starIndex < tech.stars
+                        ? "text-blue-300 group-hover:text-blue-100"
+                        : "text-white/10 group-hover:text-white/25"
+                    }`}
+                  >
+                    ★
+                  </span>
+                ))}
+              </div>
+
+              {/* Indicador */}
+              <div className="mt-3 flex items-center gap-1.5 opacity-25 transition-all duration-500 group-hover:scale-110 group-hover:opacity-100">
+                <span className="h-1 w-1 rounded-full bg-blue-300 transition-transform duration-500 group-hover:scale-150" />
+
+                <span className="h-px w-4 bg-blue-300/40 transition-all duration-500 group-hover:w-8 group-hover:bg-blue-300" />
+              </div>
+            </div>
+          );
+        })}
       </div>
-    </section>
-  );
+    </div>
+  </section>
+);
 };
 
 export default TechnologiesSection;

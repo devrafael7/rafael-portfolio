@@ -13,12 +13,15 @@ import CurrentlyLearning from "./sections/CurrentlyLearning";
 import Certifications from "./sections/Certifications";
 import RafaelDashboard from "./sections/RafaelDashboard";
 import TechnologiesSection from "./sections/TechnologiesSection"
+import Languagens from "./sections/Languagens"
+
 const App = () => (
   <>
     <Navbar />
     <Hero />
     <LogoShowcase />
     <FeatureCards />
+    <Languagens/>
     <Experience />
     <Skills />
     <Projects />
