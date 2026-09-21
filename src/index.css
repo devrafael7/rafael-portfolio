@@ -5,9 +5,13 @@
   --gradient: radial-gradient(circle, #e5e5e5 0%, #fff 100%);
 }
 
+html {
+  font-size: 90%;
+}
+
 html,
 body {
-  width: 100dvw;
+  width: 100%;
   overflow-x: hidden;
   background-color: black;
   color: white;
@@ -16,7 +20,7 @@ body {
 }
 
 section {
-  width: 100dvw;
+  width: 100%;
 }
 
 @theme {
@@ -252,7 +256,7 @@ section {
   }
 
   .timeline-logo {
-    @apply md:size-20 size-10 flex-none rounded-full flex justify-center items-center md:-translate-y-7 border border-black-50 bg-black-100;
+    @apply md:size-18 size-10 flex-none ml-4 rounded-full flex justify-center items-center md:-translate-y-7 border border-black-50 bg-black-100;
   }
 
   .exp-card-wrapper {

@@ -31,6 +31,12 @@ import { SiGit } from "react-icons/si";
 gsap.registerPlugin(ScrollTrigger);
 
 // ============================================================
+// BASE URL
+// ============================================================
+
+const BASE_URL = import.meta.env.BASE_URL;
+
+// ============================================================
 // TECNOLOGIAS
 // ============================================================
 
@@ -104,7 +110,7 @@ const techStack = [
     icon: SiApachekafka,
   },
 
-    {
+  {
     name: "GitHub",
     category: "Version Control",
     icon: SiGithub,
@@ -128,13 +134,13 @@ const techStack = [
   {
     name: "Power Automate",
     category: "Automation",
-    image: "/images/automate.png",
+    image: `${BASE_URL}images/automate.png`,
   },
 
   {
     name: "Power Apps",
     category: "Low-Code Development",
-    image: "/images/powerapp-2020-icon-1024x1024-1.png",
+    image: `${BASE_URL}images/powerapp-2020-icon-1024x1024-1.png`,
   },
 ];
 
@@ -252,91 +258,87 @@ const TechnologiesSection = () => {
               NÚCLEO CENTRAL
           ================================================== */}
 
-          ```jsx
-{/* ==================================================
-    NÚCLEO CENTRAL
-================================================== */}
-
-        <div
-        className="
-            pointer-events-none
-            absolute
-            z-20
-            flex
-            h-56 w-56
-            flex-col
-            items-center
-            justify-center
-            rounded-full
-            border
-            border-white/10
-            bg-white/[0.025]
-            px-8
-            text-center
-            backdrop-blur-md
-
-            sm:h-64 sm:w-64
-            sm:px-10
-
-            lg:h-72 lg:w-72
-            lg:px-12
-        "
-        >
-        {/* Conceito principal */}
-        <span
+          <div
             className="
-            mb-3
-            text-[11px]
-            font-bold
-            uppercase
-            tracking-[0.18em]
-            text-cyan-300
-            sm:text-xs
+              pointer-events-none
+              absolute
+              z-20
+              flex
+              h-56 w-56
+              flex-col
+              items-center
+              justify-center
+              rounded-full
+              border
+              border-white/10
+              bg-white/[0.025]
+              px-8
+              text-center
+              backdrop-blur-md
+
+              sm:h-64 sm:w-64
+              sm:px-10
+
+              lg:h-72 lg:w-72
+              lg:px-12
             "
-        >
-            Concepts
-        </span>
+          >
+            {/* Conceito principal */}
 
-        {/* Linha divisória */}
-        <div className="mb-3 h-px w-16 bg-white/10" />
+            <span
+              className="
+                mb-3
+                text-[11px]
+                font-bold
+                uppercase
+                tracking-[0.18em]
+                text-cyan-300
+                sm:text-xs
+              "
+            >
+              Concepts
+            </span>
 
-        {/* Conceitos */}
-        <div
-            className="
-            flex
-            flex-col
-            items-center
-            gap-1.5
-            text-[9px]
-            font-medium
-            leading-tight
-            tracking-wide
-            text-white/50
+            {/* Linha divisória */}
 
-            sm:gap-2
-            sm:text-[10px]
+            <div className="mb-3 h-px w-16 bg-white/10" />
 
-            lg:gap-2
-            lg:text-[11px]
-            "
-        >
-            <span>Medallion Architecture</span>
+            {/* Conceitos */}
 
-            <span>Dimensional Modeling</span>
+            <div
+              className="
+                flex
+                flex-col
+                items-center
+                gap-1.5
+                text-[9px]
+                font-medium
+                leading-tight
+                tracking-wide
+                text-white/50
 
-            <span>ACID Transactions</span>
+                sm:gap-2
+                sm:text-[10px]
 
-            <span>ETL / ELT</span>
+                lg:gap-2
+                lg:text-[11px]
+              "
+            >
+              <span>Medallion Architecture</span>
 
-            <span>Batch & Streaming</span>
+              <span>Dimensional Modeling</span>
 
-            <span>Warehouse & Lakehouse</span>
+              <span>ACID Transactions</span>
 
-            <span>Data Quality</span>
-        </div>
-        </div>
+              <span>ETL / ELT</span>
 
+              <span>Batch & Streaming</span>
 
+              <span>Warehouse & Lakehouse</span>
+
+              <span>Data Quality</span>
+            </div>
+          </div>
 
           {/* ==================================================
               TECNOLOGIAS

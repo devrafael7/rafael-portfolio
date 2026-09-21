@@ -60,6 +60,7 @@ const TechnologyIcon = ({ technology }) => {
     />
   );
 };
+const BASE_URL = import.meta.env.BASE_URL;
 
 const projects = [
   {
@@ -69,27 +70,27 @@ const projects = [
       "A cloud-based data platform that ingests the European Soccer Database from Kaggle, converts SQLite data into CSV files, stores them in an Amazon S3 data lake, loads and transforms them in Snowflake with dbt, orchestrates the complete workflow with Apache Airflow, trains a Random Forest regression model with Snowpark ML, and delivers interactive analytics through Power BI.",
     images: [
       {
-        src: "/images/projects/p1/solution-architecture.png",
+        src: `${BASE_URL}images/projects/p1/solution-architecture.png`,
         alt: "Visão geral do projeto",
       },
       {
-        src: "/images/projects/p1/dbt_erd-data-lineage.png",
+        src: `${BASE_URL}images/projects/p1/dbt_erd-data-lineage.png`,
         alt: "Pipeline no Apache Airflow",
       },
       {
-        src: "/images/projects/p1/amazon-s3-data-lake.png",
+        src: `${BASE_URL}images/projects/p1/amazon-s3-data-lake.png`,
         alt: "Modelagem no Snowflake",
       },
       {
-        src: "/images/projects/p1/airflow-dags.png",
+        src: `${BASE_URL}images/projects/p1/airflow-dags.png`,
         alt: "Dashboard do projeto",
       },
       {
-        src: "/images/projects/p1/snowflake-data-warehouse.png",
+        src: `${BASE_URL}images/projects/p1/snowflake-data-warehouse.png`,
         alt: "Dashboard do projeto",
       },
       {
-        src: "/images/projects/p1/model-performance-dashboard1.png",
+        src: `${BASE_URL}images/projects/p1/model-performance-dashboard1.png`,
         alt: "Dashboard do projeto",
       },
     ],
@@ -104,39 +105,56 @@ const projects = [
       "dbt",
       "Docker",
       "Power BI",
-      "Machine Learning"
+      "Machine Learning",
     ],
     githubUrl: "https://github.com/devrafael7/european-soccer-pipeline",
     projectUrl:
       "https://github.com/devrafael7/european-soccer-pipeline/blob/main/README.md",
   },
+
   {
     title: "Real-Time Traffic Data Pipeline",
     category: "Lakehouse",
-    description: "The project consumes traffic information from the TomTom Traffic API, publishes events to Apache Kafka, processes the streaming data using Apache Spark Structured Streaming and stores the data in a Databricks Lakehouse using Delta Lake and the Medallion Architecture. The processed data is then consumed through Databricks Dashboards for near real-time monitoring and Power BI for historical analytics and business intelligence.",
+    description:
+      "The project consumes traffic information from the TomTom Traffic API, publishes events to Apache Kafka, processes the streaming data using Apache Spark Structured Streaming and stores the data in a Databricks Lakehouse using Delta Lake and the Medallion Architecture. The processed data is then consumed through Databricks Dashboards for near real-time monitoring and Power BI for historical analytics and business intelligence.",
     images: [
       {
-        src: "/images/projects/p2/realtime-traffic-pipeline (1).png",
+        src: `${BASE_URL}images/projects/p2/realtime-traffic-pipeline (1).png`,
         alt: "Página inicial do dashboard",
       },
       {
-        src: "/images/projects/p2/realtime-traffic-diagram (1).png",
+        src: `${BASE_URL}images/projects/p2/realtime-traffic-diagram (1).png`,
         alt: "Análise comercial",
       },
       {
-        src: "/images/projects/p2/realtime-traffic-analytics-jobs (1).png",
+        src: `${BASE_URL}images/projects/p2/realtime-traffic-analytics-jobs (1).png`,
         alt: "Indicadores de vendas",
       },
       {
-        src: "/images/projects/p2/realtime-traffic-analytics (1).png",
+        src: `${BASE_URL}images/projects/p2/realtime-traffic-analytics (1).png`,
         alt: "Indicadores de vendas",
       },
     ],
-    technologies: ["Tomtom API", "Python", "Kafka", "AWS EC2", "AWS IAM", "Docker", "Databricks", "Spark", "Delta Lake", "Databricks Dashboards", "Databricks Jobs", "Power BI", ],
+    technologies: [
+      "Tomtom API",
+      "Python",
+      "Kafka",
+      "AWS EC2",
+      "AWS IAM",
+      "Docker",
+      "Databricks",
+      "Spark",
+      "Delta Lake",
+      "Databricks Dashboards",
+      "Databricks Jobs",
+      "Power BI",
+    ],
     githubUrl: "https://github.com/devrafael7/realtime-traffic-pipeline",
-    projectUrl: "https://github.com/devrafael7/realtime-traffic-pipeline/blob/main/README.md",
+    projectUrl:
+      "https://github.com/devrafael7/realtime-traffic-pipeline/blob/main/README.md",
   },
 ];
+
 
 const ArrowLeftIcon = () => (
   <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" aria-hidden="true">

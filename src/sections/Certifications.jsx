@@ -6,12 +6,14 @@ import TitleHeader from "../components/TitleHeader";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 const certifications = [
   {
     title: "Coders 24 | Front End",
     issuer: "Ada + Santander Open Academy",
     issuedAt: "June 2024",
-    image: "/images/certifications/ada.png",
+    image: `${BASE_URL}images/certifications/ada.png`,
     credentialUrl: "https://ada.tech/certificado?code=c17743b0-5010-aba1-8c39-089222d932ad",
     credentialId: "Credential ID: c17743b0-5010-aba1-8c39-089222d932ad",
     category: "Front End Development",
@@ -20,7 +22,7 @@ const certifications = [
     title: "Data Engineering on Google Cloud",
     issuer: "Google Cloud",
     issuedAt: "Issued May 2026",
-    image: "/images/certifications/gcp1.png",
+    image: `${BASE_URL}images/certifications/gcp1.png`,
     credentialUrl: "https://coursera.org/verify/3Z0RCY62NQAH",
     credentialId: "Credential ID: 3Z0RCY62NQAH",
     category: "Cloud Data",
@@ -29,7 +31,7 @@ const certifications = [
     title: "Data Modeling and Architecture",
     issuer: "Microsoft",
     issuedAt: "Issued May 2026",
-    image: "/images/certifications/microsoft.png",
+    image: `${BASE_URL}images/certifications/microsoft.png`,
     credentialUrl: "https://coursera.org/verify/PV32CKRUMCWG",
     credentialId: "Credential ID: PV32CKRUMCWG",
     category: "Data Engineering",
@@ -38,7 +40,7 @@ const certifications = [
     title: "Enterprise Data Wrangling with SQL and Python",
     issuer: "Northeastern University",
     issuedAt: "Issued May 2026",
-    image: "/images/certifications/northeastern.png",
+    image: `${BASE_URL}images/certifications/northeastern.png`,
     credentialUrl: "https://coursera.org/verify/355SE8P1K181",
     credentialId: "Credential ID: 355SE8P1K181",
     category: "Data Engineering",
@@ -47,7 +49,7 @@ const certifications = [
     title: "ETL Processing on Google Cloud Using Dataflow and BigQuery",
     issuer: "Google Cloud",
     issuedAt: "Issued March 2026",
-    image: "/images/certifications/gcp2.png",
+    image: `${BASE_URL}images/certifications/gcp2.png`,
     credentialUrl: "https://coursera.org/verify/GQNMQI2F0IJ7",
     credentialId: "Credential ID: GQNMQI2F0IJ7",
     category: "Cloud Computing",

@@ -36,7 +36,10 @@ const Hero = () => {
     <section id="hero" className="relative overflow-hidden">
       {/* Background */}
       <div className="absolute top-0 left-0 z-10">
-        <img src="/images/bg.png" alt="" />
+        <img
+          src={`${import.meta.env.BASE_URL}images/bg.png`}
+          alt=""
+        />
       </div>
 
       <div className="hero-layout">
@@ -85,40 +88,39 @@ const Hero = () => {
         </header>
 
         {/* RIGHT: SUA FOTO */}
-        {/* RIGHT: SUA FOTO */}
         <figure className="flex items-center justify-start -ml-10 md:-ml-20 lg:-ml-28">
           <div
             className="
-      hero-photo
-      relative
-      w-[350px]
-      h-[350px]
-      md:w-[440px]
-      md:h-[440px]
-      lg:w-[500px]
-      lg:h-[500px]
-      xl:w-[550px]
-      xl:h-[550px]
-      aspect-square
-      shrink-0
-      overflow-hidden
-      rounded-full
-      border-4
-      border-white/10
-      shadow-2xl
-    "
+              hero-photo
+              relative
+              w-[350px]
+              h-[350px]
+              md:w-[440px]
+              md:h-[440px]
+              lg:w-[375px]
+              lg:h-[375px]
+              xl:w-[400px]
+              xl:h-[400px]
+              aspect-square
+              shrink-0
+              overflow-hidden
+              rounded-full
+              border-4
+              border-white/10
+              shadow-2xl
+            "
           >
             <img
-              src="/images/personal-picture.jpeg"
+              src={`${import.meta.env.BASE_URL}images/personal-picture.jpeg`}
               alt="Rafael"
               className="
-        absolute
-        inset-0
-        w-full
-        h-full
-        object-cover
-        object-center
-      "
+                absolute
+                inset-0
+                w-full
+                h-full
+                object-cover
+                object-center
+              "
             />
           </div>
         </figure>

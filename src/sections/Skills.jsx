@@ -227,7 +227,7 @@ const Skills = () => {
                     ref={(element) => {
                       countersRef.current[index] = element;
                     }}
-                    className="text-3xl font-black tracking-tight text-slate-200"
+                    className="text-3xl font-black tracking-tight text-blue-200"
                   >
                     0%
                   </div>
@@ -257,10 +257,7 @@ const Skills = () => {
                       }}
                       className="
                         relative h-full w-0 rounded-full
-                        bg-gradient-to-r
-                        from-red-500
-                        via-amber-400
-                        to-emerald-400
+                       bg-blue-300
                       "
                     >
                       {/* Luz na ponta da barra */}

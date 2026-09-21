@@ -47,15 +47,21 @@ const AppShowcase = () => {
     <div id="work" ref={sectionRef} className="app-showcase">
       <div className="w-full">
         <div className="showcaselayout">
+
           <div ref={rydeRef} className="first-project-wrapper">
             <div className="image-wrapper">
-              <img src="/images/dashboard1.png" alt="Ryde App Interface" />
+              <img
+                src={`${import.meta.env.BASE_URL}images/dashboard1.png`}
+                alt="Ryde App Interface"
+              />
             </div>
+
             <div className="text-content">
               <h2>
                 On-Demand Rides Made Simple with a Powerful, User-Friendly App
                 called Ryde
               </h2>
+
               <p className="text-white-50 md:text-xl">
                 An app built with React Native, Expo, & TailwindCSS for a fast,
                 user-friendly experience.
@@ -63,31 +69,33 @@ const AppShowcase = () => {
             </div>
           </div>
 
-         <div className="project-list-wrapper overflow-hidden">
-          <div className="project" ref={libraryRef}>
-           <div className="image-wrapper relative aspect-video w-full overflow-hidden bg-black p-0">
-  <img
-    src="/images/dashboard1.png"
-    alt="Data Engineering Dashboard"
-    className="absolute inset-0 block h-full w-full object-contain"
-  />
-</div>
+          <div className="project-list-wrapper overflow-hidden">
 
-            <h2>The Library Management Platform</h2>
-          </div>
+            <div className="project" ref={libraryRef}>
+              <div className="image-wrapper relative aspect-video w-full overflow-hidden bg-black p-0">
+                <img
+                  src={`${import.meta.env.BASE_URL}images/dashboard1.png`}
+                  alt="Data Engineering Dashboard"
+                  className="absolute inset-0 block h-full w-full object-contain"
+                />
+              </div>
 
-          <div className="project" ref={ycDirectoryRef}>
-            <div className="image-wrapper relative aspect-video w-full overflow-hidden bg-transparent p-0">
-              <img
-                src="/images/lineage.png"
-                alt="YC Directory App"
-                className="absolute inset-0 block h-full w-full object-cover"
-              />
+              <h2>The Library Management Platform</h2>
             </div>
 
-            <h2>YC Directory - A Startup Showcase App</h2>
+            <div className="project" ref={ycDirectoryRef}>
+              <div className="image-wrapper relative aspect-video w-full overflow-hidden bg-transparent p-0">
+                <img
+                  src={`${import.meta.env.BASE_URL}images/lineage.png`}
+                  alt="YC Directory App"
+                  className="absolute inset-0 block h-full w-full object-cover"
+                />
+              </div>
+
+              <h2>YC Directory - A Startup Showcase App</h2>
+            </div>
+
           </div>
-        </div>
         </div>
       </div>
     </div>
