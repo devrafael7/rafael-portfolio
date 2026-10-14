@@ -23,6 +23,16 @@ import { SiDatabricks } from "react-icons/si";
 import { TbDelta } from "react-icons/tb";
 import { FcScatterPlot } from "react-icons/fc";
 
+import { AwsGlue } from "@dev.icons/react";
+import { AwsAthena } from "@dev.icons/react";
+import { AwsRedshift } from "@dev.icons/react";
+import { AwsStepFunctions } from "@dev.icons/react";
+import { AwsEventbridge } from "@dev.icons/react";  
+import { AwsCloudwatch } from "@dev.icons/react";
+import { AwsLambda } from "@dev.icons/react";   
+import { TbFileDatabase } from "react-icons/tb";  
+
+import { Tableau } from "@dev.icons/react";
 
 
 
@@ -35,17 +45,26 @@ const technologyIcons = {
   Snowflake: SnowflakeIcon,
   SQL: FaDatabase,
   "AWS EC2": AwsEc2,
-  "AWS S3": AwsS3,
+  "Amazon S3": AwsS3,
   "AWS IAM": AwsIam,
   "Kaggle API": SiKaggle,
   "Tomtom API": TbApi,
+  "AWS Lambda": AwsLambda,
   "Kafka": SiApachekafka,
   Databricks: SiDatabricks,
   "Databricks Jobs": SiDatabricks,
   "Databricks Dashboards": SiDatabricks,
   "Spark": ApacheSpark,
   "Delta Lake": TbDelta,
-  "Machine Learning": FcScatterPlot
+  "Machine Learning": FcScatterPlot,
+  "AWS Glue": AwsGlue,
+  "Amazon Athena": AwsAthena,
+  "Amazon Redshift": AwsRedshift,
+  "AWS Step Functions": AwsStepFunctions,
+  "Amazon EventBridge": AwsEventbridge,
+  "Amazon CloudWatch": AwsCloudwatch,
+  "Parquet": TbFileDatabase,  
+  "Tableau": Tableau,
 };
 
 const TechnologyIcon = ({ technology }) => {
@@ -99,7 +118,7 @@ const projects = [
       "Python",
       "Airflow",
       "Snowflake",
-      "AWS S3",
+      "Amazon S3",
       "AWS EC2",
       "AWS IAM",
       "dbt",
@@ -151,7 +170,70 @@ const projects = [
     ],
     githubUrl: "https://github.com/devrafael7/realtime-traffic-pipeline",
     projectUrl:
-      "https://github.com/devrafael7/realtime-traffic-pipeline/blob/main/README.md",
+    "https://github.com/devrafael7/realtime-traffic-pipeline/blob/main/README.md",
+  },
+  {
+    title: "AWS E-commerce Data Pipeline",
+    category: "Data Engineering",
+    description:
+      "This project implements an end-to-end data pipeline on AWS for e-commerce analytics. Raw customer, product, and sales data is stored in Amazon S3, processed and transformed using AWS Glue following a Medallion-inspired architecture, and queried with Amazon Athena. Curated data is loaded into Amazon Redshift for analytical workloads and consumed through Tableau dashboards for business intelligence. AWS Step Functions orchestrates the pipeline execution, while Amazon EventBridge Scheduler enables automated scheduling of data processing workflows.",
+    images: [
+      {
+        src: `${BASE_URL}images/projects/p3/aws-ecommerce-pipeline-architecture.png`,
+        alt: "Página inicial do dashboard",
+      },
+      {
+        src: `${BASE_URL}images/projects/p3/ecommerce_s3.png`,
+        alt: "Análise comercial",
+      },
+      {
+        src: `${BASE_URL}images/projects/p3/ecommerce_step_functions.png`,
+        alt: "Indicadores de vendas",
+      },
+      {
+        src: `${BASE_URL}images/projects/p3/ecommerce_glue_catalog.png`,
+        alt: "Indicadores de vendas",
+      },
+      {
+        src: `${BASE_URL}images/projects/p3/ecommerce_athena.png`,
+        alt: "Indicadores de vendas",
+      },
+      {
+        src: `${BASE_URL}images/projects/p3/ecommerce_lambda.png`,
+        alt: "Indicadores de vendas",
+      },
+      {
+        src: `${BASE_URL}images/projects/p3/ecommerce_redshift.png`,
+        alt: "Indicadores de vendas",
+      },
+      {
+        src: `${BASE_URL}images/projects/p3/Tableau-DashboardDeVendas-Ecommerce.PNG`,
+        alt: "Indicadores de vendas",
+      },
+      {
+        src: `${BASE_URL}images/projects/p3/ecommerce_relationship.png`,
+        alt: "Indicadores de vendas",
+      },
+    ],
+    technologies: [
+      "Amazon S3",
+      "AWS Glue",
+      "Amazon Athena",
+      "Amazon Redshift",
+      "AWS IAM",
+      "AWS Step Functions",
+      "Amazon EventBridge",
+      "Amazon CloudWatch",
+      "AWS Lambda",
+      "SQL",
+      "PySpark",
+      "Parquet",
+      "Tableau",
+    ],
+  
+    githubUrl: "https://github.com/devrafael7/aws-ecommerce-data-pipeline/",
+    projectUrl:
+      "https://github.com/devrafael7/aws-ecommerce-data-pipeline/blob/main/README.md",
   },
 ];
 

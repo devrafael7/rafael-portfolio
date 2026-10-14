@@ -16,19 +16,23 @@ import {
   DockerIcon,
   AwsEc2,
   AwsS3,
+  AwsIam,
+  AwsLambda,
+  AwsGlue,
+  AwsAthena,
+  AwsRedshift,
+  AwsStepFunctions,
+  AwsEventbridge,
+  AwsCloudwatch,
   ApacheSpark,
+  Tableau,
 } from "@dev.icons/react";
-
-// ============================================================
-// ÍCONES - react-icons
-// ============================================================
 
 import { VscGraph } from "react-icons/vsc";
 import { FaDatabase } from "react-icons/fa6";
-import { SiApachekafka } from "react-icons/si";
-import { SiDatabricks } from "react-icons/si";
-import { SiGithub } from "react-icons/si";
-import { SiGit } from "react-icons/si";
+import { SiApachekafka, SiDatabricks, SiGithub, SiGit, SiKaggle } from "react-icons/si";
+import { TbDelta, TbFileDatabase, TbApi } from "react-icons/tb";
+import { FcScatterPlot } from "react-icons/fc";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -48,7 +52,7 @@ const techStack = [
   {
     name: "Apache Spark",
     category: "Big Data Processing",
-    stars: 1,
+    stars: 2,
     icon: ApacheSpark,
   },
   {
@@ -67,8 +71,56 @@ const techStack = [
   {
     name: "AWS S3",
     category: "Cloud Storage",
-    stars: 2,
+    stars: 3,
     icon: AwsS3,
+  },
+  {
+    name: "AWS Lambda",
+    category: "Serverless Compute",
+    stars: 2,
+    icon: AwsLambda,
+  },
+  {
+    name: "AWS Glue",
+    category: "Serverless ETL",
+    stars: 3,
+    icon: AwsGlue,
+  },
+  {
+    name: "Amazon Athena",
+    category: "Serverless Querying",
+    stars: 2,
+    icon: AwsAthena,
+  },
+  {
+    name: "Amazon Redshift",
+    category: "Cloud Data Warehouse",
+    stars: 2,
+    icon: AwsRedshift,
+  },
+  {
+    name: "AWS Step Functions",
+    category: "Workflow Orchestration",
+    stars: 2,
+    icon: AwsStepFunctions,
+  },
+  {
+    name: "Amazon EventBridge",
+    category: "Event-Driven Scheduling",
+    stars: 2,
+    icon: AwsEventbridge,
+  },
+  {
+    name: "Amazon CloudWatch",
+    category: "Monitoring & Logging",
+    stars: 2,
+    icon: AwsCloudwatch,
+  },
+  {
+    name: "AWS IAM",
+    category: "Cloud Security",
+    stars: 2,
+    icon: AwsIam,
   },
   {
     name: "Docker",
@@ -79,7 +131,7 @@ const techStack = [
   {
     name: "Airflow",
     category: "Orchestration",
-    stars: 1,
+    stars: 2,
     icon: Airflow,
   },
   {
@@ -123,6 +175,12 @@ const techStack = [
     color: "text-orange-500",
   },
   {
+    name: "Tableau",
+    category: "Business Intelligence",
+    stars: 3,
+    icon: Tableau,
+  },
+  {
     name: "Power BI",
     category: "Business Intelligence",
     stars: 5,
@@ -140,6 +198,12 @@ const techStack = [
     category: "Low-Code Development",
     stars: 4,
     image: `${BASE_URL}images/powerapp-2020-icon-1024x1024-1.png`,
+  },
+  {
+    name: "Machine Learning",
+    category: "Data Science",
+    stars: 2,
+    icon: FcScatterPlot,
   },
 ];
 
